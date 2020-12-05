@@ -8,18 +8,19 @@ for a in range(long_switch):
     switchers.append(0)
 
 for step in range(long_step):
-    for instep in range(len(switchers)):
-        if not (instep+1) % (step+1) == 0:
-            continue
-        if switchers[instep] == 0:
-            switchers[instep] = 1
-        else:
-            switchers[instep] = 0
+    for stepin in range(3):
+        for instep in range(long_step):
+            if not (instep+1) % (stepin+1) == 0:
+                continue
+            if switchers[instep] == 0:
+                switchers[instep] = 1
+            else:
+                switchers[instep] = 0
     count_lamp = 0
-    
+
     for lampon in switchers:
         count_lamp += lampon
-    
+
     if count_lamp == len(switchers):
         lamp_on +=1
 
